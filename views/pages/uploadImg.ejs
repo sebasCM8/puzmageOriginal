@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUZMAGE</title>
+    <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="css/uploadImg.css">
+</head>
+
+<body>
+    <%- include('../partials/navbar'); %>
+    <div class="container">
+        <label for="" id="usu_email" style="color: white;" ><%= usu_email %></label>
+        <div class="cmUploadImg">
+            <h4>Subir imagen</h4>
+            <div class="cmImgUploaded">
+                <img src="" class="cmImg"  alt="" id="uploadedImg">
+            </div>
+            <input type="file" name="inpFile" id="inpFile" accept="image/png, image/jpg, image/jpeg">
+            <br/><br/>
+            <h4>Modified: </h4>
+            <img src="" alt="" id="modifiedImg">
+            <button class="btn btn-primary" onclick="optimizarB64()">CARGAR IMAGEN</button>
+            <button style="display:none;" id="upImgBtn" class="btn btn-success" onclick="uploadImg()">SUBIR IMAGEN</button>
+        </div>
+    </div>
+    <script src="js/upImg.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

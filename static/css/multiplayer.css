@@ -1,0 +1,50 @@
+
+.cmImg{
+    max-height: 30rem;
+}
+
+.cmImgContainer{
+    margin: auto;
+    text-align: center;
+}
+
+.cmPlayersContainer{
+    float: right;
+}
+
+.cmPlayerTag{
+    margin: 1rem;
+    height: 3rem;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: black;
+    color: white;
+    display: inline-block;
+}
+
+.cmPlayerTag > label{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+/*PUZZLE CLASSES*/
+
+.gridContainer{
+    border-style: solid;
+    margin: auto;
+}
+
+.gridContainer > div{
+    width: 100%;
+}
+
+.fila{
+    display: flex;
+    flex-direction: row;
+}
+
+.fila > div{
+    height: 100%;
+    background-repeat: no-repeat;
+}

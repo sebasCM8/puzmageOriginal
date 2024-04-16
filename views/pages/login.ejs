@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUZMAGE Ingresar</title>
+    <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <div class="cmCenteredContent">
+        <div class="card">
+            <div class="card-header">
+                <h4>LOGIN</h4>
+            </div>
+            <div class="card-body">
+                <form class="row g-3" action="/login" method="post">
+                    <div class="mb-3">
+                        <label for="emailField" class="form-label">Email </label>
+                        <input type="email" name="usu_email" class="form-control" id="emailField"
+                            placeholder="name@example.com...">
+                    </div>
+                    <div class="mb-3">
+                        <label for="passwordField" class="form-label">Contraseña </label>
+                        <input type="password" name="usu_password" class="form-control" id="passwordField"
+                            placeholder="contraseña123...">
+                    </div>
+                    <button class="btn btn-primary btn-lg">INGRESAR</button>
+                </form>
+                <%if (typeof msg_e != "undefined") { %>
+                    <label for="" style="color:red"><%= msg_e %></label>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

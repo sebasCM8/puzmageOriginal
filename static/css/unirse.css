@@ -1,0 +1,14 @@
+body{
+    background-image: url("../images/unirseBk.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cmUnirse{
+    text-align: center;
+    margin: 3rem auto;
+    border-radius: 1rem;
+    width: 45%;
+    padding: 1.2rem;
+    background-color: burlywood;
+}

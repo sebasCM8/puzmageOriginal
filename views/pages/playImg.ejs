@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUZMAGE</title>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="css/playImg.css">
+</head>
+<body>
+    <div class="container">
+        <% if (typeof img_id != "undefined") { %>
+            <label style="color: white;" for="" id="img_id"><%= img_id %></label>
+        <% } %>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="images/singlePlayer.png" class="card-img-top" alt="jugar solo img">
+                    <div class="card-body">
+                        <h5 class="card-title">JUGAR SOLO</h5>
+                        <p class="card-text">Resuelve el rompecabezas solo sin presion.. perfecto para practicar</p>
+                        <form action="/playSolo" method="post">
+                            <button class="btn btn-success" name="img_id" value="<%= img_id %>">JUGAR</button>
+                        </form>
+                    </div>
+                </div>
+                <br/><br/>
+            </div>
+            <div class="col-md-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="images/multiplayer.png" class="card-img-top" alt="multiplayer img">
+                    <div class="card-body">
+                        <h5 class="card-title">MULTIJUGADOR</h5>
+                        <p class="card-text">Crea una partida e invita a tus amigos con el nombre de la partida</p>
+                        <form action="/playMulti" method="post">
+                            <button name="img_id" value="<%= img_id %>" class="btn btn-primary">JUGAR</button>
+                        </form>
+                    </div>
+                </div>
+                <br/><br/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

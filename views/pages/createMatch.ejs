@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUZMAGE partida</title>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="css/createMatch.css">
+</head>
+
+<body>
+    <div class="container">
+        <h4>Crear partida.-</h4>
+        <div class="col-md-12">
+            <form action="/createMatch" method="post">
+                <div class="mb-3">
+                    <label for="img_id" class="form-label">Imagen</label>
+                    <input type="text" class="form-control" value="<%= img_id %>" name="img_id" id="img_id" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="usu_email" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" value="<%= usu_email %>" name="usu_email" id="usu_email" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="sal_code" class="form-label">Codigo partida</label>
+                    <input type="text" class="form-control" placeholder="partidaejemplo123XY..." name="sal_code" id="sal_code">
+                </div>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" checked="true" type="radio" name="sal_level" id="easy" value="4">
+                        <label class="form-check-label" for="easy">Facil</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sal_level" id="medium" value="6">
+                        <label class="form-check-label" for="medium">Medio</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sal_level" id="hard" value="8">
+                        <label class="form-check-label" for="hard">Dificil</label>
+                    </div>
+                </div>
+                <% if (typeof msgE != "undefined") { %>
+                    <label style="color: red; font-weight: bold; font-size: 2rem;" for=""><%= msgE %></label>
+                <% } %>
+                <button class="btn btn-primary">CREAR PARTIDA</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

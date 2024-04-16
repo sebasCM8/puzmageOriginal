@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUZMAGE Solo</title>
+    <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="css/solo.css">
+</head>
+
+<body>
+    <div id="overlay">
+        <div class="options">
+            <h4>ELIGE UNA DIFICULTAD</h4>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" checked="true" type="radio" name="pLevel" id="easy" value="4">
+                <label class="form-check-label" for="inlineRadio1">Facil</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pLevel" id="medium" value="6">
+                <label class="form-check-label" for="inlineRadio2">Medio</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pLevel" id="hard" value="8">
+                <label class="form-check-label" for="inlineRadio3">Dificil</label>
+            </div>
+            <div class="btnCont">
+                <button onclick="continueGame()" class="btn btn-primary">CONTINUAR</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <a class="btn btn-secondary" href="/profile">SALIR</a>
+        <h2>PUZMAGE !</h2>
+        <% if (typeof imgObj !="undefined" ) {%>
+            <div id="imgContainer" class="cmImgContainer">
+                <img id="imgGame" class="cmImg" src="<%= imgObj.img_content %>" alt="">
+            </div>
+        <% } %>
+        <button id="btnEmpezar" class="btn btn-success" onclick="start()">EMPEZAR</button>
+    </div>
+    <script src="js/solo.js"></script>
+</body>
+
+</html>

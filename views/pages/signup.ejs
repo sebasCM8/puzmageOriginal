@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUZMAGE Registro</title>
+    <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <br/>
+    <a href="/login" class="btn btn-warning">INGRESAR</a>
+    <div class="cmCenteredContent">
+        <div class="card">
+            <div class="card-header">
+                <h4>REGISTRARSE</h4>
+            </div>
+            <div class="card-body">
+                <form class="row g-3" action="/signup" method="post">
+                    <div class="mb-3">
+                        <label for="emailField" class="form-label">Email </label>
+                        <input type="email" name="usu_email" class="form-control" id="emailField"
+                            placeholder="name@example.com...">
+                    </div>
+                    <div class="mb-3">
+                        <label for="passwordField" class="form-label">Contraseña </label>
+                        <input type="password" name="usu_password" class="form-control" id="passwordField"
+                            placeholder="contraseña123...">
+                    </div>
+                    <div class="mb-3">
+                        <label for="passwordField2" class="form-label">Confirmar contraseña </label>
+                        <input type="password" name="usu_password2" class="form-control" id="passwordField2"
+                            placeholder="contraseña123...">
+                    </div>
+                    <button class="btn btn-primary btn-lg">REGISTRARME</button>
+                </form>
+                <br/>
+                <%if (typeof msg_e != "undefined") { %>
+                    <label for="" style="color:red"><%= msg_e %></label>
+                <% } %>
+                <%if (typeof msg_s != "undefined") { %>
+                    <label for="" style="color:green"><%= msg_s %></label>
+                <% } %>
+            </div>
+        </div>   
+    </div>
+</body>
+
+</html>

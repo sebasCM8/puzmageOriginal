@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUZMAGE multiplayer</title>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="css/multiplayer.css">
+</head>
+
+<body onload="pageLoad()" onbeforeunload="playerLeaving()">
+    <a id="salirBtn" style="display: none;" class="btn btn-primary" href="/profile">Salir</a>
+    <label for="" style="color: white;" id="sal_level"><%= sal.sal_level %></label>
+    <label for="" style="color: white;" id="usu_id"><%= usu.usu_id %></label>
+    <label for="" style="color: white;" id="usu_email"><%= usu.usu_email %></label>
+    <label id="sal_code" style="color: white;"><%= sal.sal_code %></label>
+    <div class="cmPlayersContainer" id="pContainer"></div>
+    <h2>Multiplayer match</h2>
+    <div class="cmImgContainer" id="imgContainer">
+        <img class="cmImg" id="imgGame" src="<%= img.img_content %>" alt="img puzzle">
+    </div>
+    <button id="btnListo" class="btn btn-success" onclick="listo()">LISTO</button>
+
+
+    <script src="../socket.io/socket.io.js"></script>
+    <script src="js/multiplayer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUZMAGE Perfil</title>
+    <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+    <%- include('../partials/navbar'); %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="cmPerfilBox">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-house-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                        <path fill-rule="evenodd"
+                            d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                    </svg>
+                    <br />
+                    <%= usu_email %>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4>Imagenes</h4>
+                <%if (typeof ok != "undefined" && ok) { %>
+                    <label for=""><%= uImages.length %></label>
+                    <% for (var i =0 ; i < uImages.length; i++) { %>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img src="<%= uImages[i].img_content %>" alt="">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <form action="/deleteImg" method="post">
+                                            <button class="btn btn-danger" name="img_id" value="<%= uImages[i].img_id %>">ELIMINAR</button>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <form action="/playImg" method="post">
+                                            <button class="btn btn-success" name="pimg_id" value="<%= uImages[i].img_id %>">JUGAR</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <form action="/logout" method="post">
+                    <button class="btn btn-warning">cerrar sesion</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
